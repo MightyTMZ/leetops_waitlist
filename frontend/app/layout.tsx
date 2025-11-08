@@ -22,7 +22,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "LeetOps - On-Call Engineering Assessment Platform",
-  description: "The standardized benchmark for on-call engineering reliability. Practice real-world incident response scenarios at top tech companies.",
+  description: "The standardized benchmark for on-call engineering reliability. Practice real-world incident response scenarios at top tech companies. Join our waitlist today!",
   keywords: ["engineering", "on-call", "incident response", "assessment", "simulation", "tech companies"],
   authors: [{ name: "LeetOps Team" }],
   openGraph: {
