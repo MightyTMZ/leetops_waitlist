@@ -1,8 +1,3 @@
-"use client";
-
-import { useAuth } from "@/lib/auth";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import {
   ArrowRight,
   Shield,

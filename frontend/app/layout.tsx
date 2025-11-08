@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/lib/auth";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -22,12 +21,21 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "LeetOps - On-Call Engineering Assessment Platform",
-  description: "The standardized benchmark for on-call engineering reliability. Practice real-world incident response scenarios at top tech companies. Join our waitlist today!",
-  keywords: ["engineering", "on-call", "incident response", "assessment", "simulation", "tech companies"],
+  description:
+    "The standardized benchmark for on-call engineering reliability. Practice real-world incident response scenarios at top tech companies. Join our waitlist today!",
+  keywords: [
+    "engineering",
+    "on-call",
+    "incident response",
+    "assessment",
+    "simulation",
+    "tech companies",
+  ],
   authors: [{ name: "LeetOps Team" }],
   openGraph: {
     title: "LeetOps - On-Call Engineering Assessment Platform",
-    description: "The standardized benchmark for on-call engineering reliability",
+    description:
+      "The standardized benchmark for on-call engineering reliability",
     type: "website",
   },
 };
@@ -39,13 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable}`}
-      >
-        <AuthProvider>
-          {children}
-        </AuthProvider>
-      </body>
+      <body className={`${poppins.variable}`}>{children}</body>
     </html>
   );
 }
