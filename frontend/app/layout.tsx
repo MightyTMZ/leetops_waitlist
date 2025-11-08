@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -47,7 +48,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}`}>{children}</body>
+      <body className={`${poppins.variable}`}>
+        {children} <Analytics />
+      </body>
     </html>
   );
 }
