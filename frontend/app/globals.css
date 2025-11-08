@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-orange: #ff6b35;
+  --secondary-orange: #f7931e;
+  --light-orange: #fff7ed;
+  --orange-gradient: linear-gradient(135deg, #fff7ed 0%, #fed7aa 50%, #fdba74 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-orange: var(--primary-orange);
+  --color-secondary-orange: var(--secondary-orange);
+  --color-light-orange: var(--light-orange);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --light-orange: #1a0f00;
+    --orange-gradient: linear-gradient(135deg, #1a0f00 0%, #2d1b00 50%, #4a2c00 100%);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Light orange gradient background */
+.bg-orange-gradient {
+  background: var(--orange-gradient);
+}
+
+/* Orange theme utilities */
+.text-orange-primary {
+  color: var(--primary-orange);
+}
+
+.bg-orange-primary {
+  background-color: var(--primary-orange);
+}
+
+.bg-orange-light {
+  background-color: var(--light-orange);
+}
+
+.border-orange-primary {
+  border-color: var(--primary-orange);
+}
+
+.hover\:bg-orange-primary:hover {
+  background-color: var(--primary-orange);
+}
+
+.hover\:text-orange-primary:hover {
+  color: var(--primary-orange);
+}
+
+/* Sliding animation for company logos */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 10s linear infinite;
+}
