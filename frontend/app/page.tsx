@@ -6,34 +6,15 @@ import { useEffect } from "react";
 import {
   ArrowRight,
   Shield,
-  Clock,
-  Target,
-  Users,
-  Building2,
   Star,
 } from "lucide-react";
 import Image from "next/image";
 import LeetOpsLogo from "@/components/LeetOpsLogo";
 import { currentYear } from "@/data/constants";
 
+const waitlistFormURL = "https://forms.gle/7Av7FxZiYd8shmzR8"
+
 export default function Home() {
-  const { isAuthenticated, isLoading } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isLoading && isAuthenticated) {
-      router.push("/dashboard");
-    }
-  }, [isAuthenticated, isLoading, router]);
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-orange-gradient">
       {/* Navigation */}
@@ -48,14 +29,14 @@ export default function Home() {
               <LeetOpsLogo />
             </div>
             <div className="flex items-center space-x-4">
-              <a
+              {/* <a
                 href="/login"
                 className="text-sm text-gray-600 hover:text-orange-900"
               >
                 Sign In
-              </a>
+              </a> */}
               <a
-                href="/register"
+                href={waitlistFormURL}
                 className="px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 text-sm font-medium"
               >
                 Get Started
@@ -79,10 +60,11 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/register"
+              href={waitlistFormURL}
+              target="_blank"
               className="px-8 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 font-medium text-lg flex items-center justify-center"
             >
-              Start Practicing
+              Join our waitlist
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
             <a
